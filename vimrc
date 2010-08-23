@@ -67,6 +67,16 @@ set visualbell
 set ts=4
 set sw=4
 
+function! Tabstyle_spaces()
+  " Use 2 spaces
+  set softtabstop=2
+  set shiftwidth=2
+  set tabstop=2
+  set expandtab
+endfunction
+
+call Tabstyle_spaces()
+
 "fixdel
 
 " prevent vim from adding that stupid empty line at the end of every file
@@ -93,6 +103,18 @@ hi! link ShowMarksHLm LineNr
 :command -nargs=* Make make <args> | cwindow 3
 
 let mapleader = ","
+
+imap jj <Esc> " Professor VIM says '87% of users prefer jj over esc', jj abrams disagrees
+
+" Hard to type *****************************************************************
+imap uu _
+imap hh =>
+imap aa @
+
+" Insert New Line *************************************************************
+map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
+map <Enter> o<ESC>
+"set fo-=r " do not insert a comment leader after an enter, (no work, fix!!)
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -132,6 +154,10 @@ nmap <leader>e :e **/
 
 " ,f to fast finding files using fuzzy finder.
 nmap <leader>f :FufFile **/<CR>
+
+" railsvim ***************************************************************
+map <Leader>ra :AS<CR>
+map <Leader>rs :RS<CR>
 
 " ,b to display current buffers list
 let g:miniBufExplVSplit = 25
