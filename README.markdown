@@ -1,3 +1,6 @@
+Nick Merwin's flavor of dotvim love
+-----------------------------------
+
 This is a complete Vim configuration that I'm using everywhere
 
 Plugins that are available form a git repository were added with
@@ -23,6 +26,7 @@ Note: if you alrady have `~/.vim` `~/.vimrc` REMOVE THEM (you might want to back
 * `,s` - toggle invisible characters display
 * `Ctrl-E` - switch between 2 last buffers  (its just a `:b#<cr>` :)
 * `Ctrl-N` to cancel current search highlighing
+* `jj` mapped to Escape
 
 Check out the 'vimrc' file for more...
 

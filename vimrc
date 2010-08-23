@@ -22,7 +22,7 @@ let g:rubycomplete_classes_in_global = 1
 " syntastic
 let g:syntastic_enable_signs=1
 
-colorscheme vividchalk
+colorscheme ir_black
 set background=dark
 
 let bash_is_sh=1
@@ -56,9 +56,9 @@ set autowriteall        " Automatically save before commands like :next and :mak
 set hlsearch            " Highlight search match
 set hidden              " enable multiple modified buffers
 set nobackup            " do not write backup files
-set foldcolumn=0        " columns for folding
-set foldmethod=indent
-set foldlevel=9
+"set foldcolumn=0        " columns for folding
+"set foldmethod=indent
+"set foldlevel=9
 set history=1000
 set wildmenu
 set ruler
@@ -92,12 +92,13 @@ set backupdir=~/.backup,.
 set directory=~/.backup,~/tmp,.
 
 " enable showmmarks
-let g:showmarks_enable = 1
-hi! link ShowMarksHLl LineNr
-hi! link ShowMarksHLu LineNr
-hi! link ShowMarksHLo LineNr
-hi! link ShowMarksHLm LineNr
-
+"let g:showmarks_enable = 1
+"hi! link ShowMarksHLl LineNr
+"hi! link ShowMarksHLu LineNr
+"hi! link ShowMarksHLo LineNr
+"hi! link ShowMarksHLm LineNr
+set vb t_vb= " Turn off bell, this could be more annoying, but I'm not sure how
+set nofoldenable " Turn off folding 
 
 " Make
 :command -nargs=* Make make <args> | cwindow 3
@@ -116,6 +117,9 @@ map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
 map <Enter> o<ESC>
 "set fo-=r " do not insert a comment leader after an enter, (no work, fix!!)
 
+map <leader>v :sp ~/.vimrc<Enter>
+map <leader>V :source ~/.vimrc<Enter>
+
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -133,11 +137,11 @@ map! <S-Insert> <MiddleMouse>
 " Ctrl-N to disable search match highlight
 nmap <silent> <C-N> :silent noh<CR>
 
-" Ctrol-E to switch between 2 last buffers
-nmap <C-E> :b#<CR>
+" Ctrl-E to switch between 2 last buffers
+"nmap <C-E> :b#<CR>
 
 " Ctrl-P to Display the file browser tree
-nmap <C-P> :NERDTreeToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 " ,p to show current file in the tree
 nmap <leader>p :NERDTreeFind<CR>
 
@@ -146,8 +150,8 @@ nmap <leader>/ :call NERDComment(0, "invert")<cr>
 vmap <leader>/ :call NERDComment(0, "invert")<cr>
 
 " ,t to show tags window
-let Tlist_Show_Menu=1
-nmap <leader>t :TlistToggle<CR>
+"let Tlist_Show_Menu=1
+"nmap <leader>t :TlistToggle<CR>
 
 " ,e to fast finding files. just type beginning of a name and hit TAB
 nmap <leader>e :e **/
